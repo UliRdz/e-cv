@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hector Ulises Rodriguez Garcia - CV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Profile Section (33%) -->
+        <div class="profile-section">
+            <div class="profile-image">
+                <!-- Replace 'assets/images/profile-photo.jpg' with your actual photo path -->
+                <img src="assets/images/profile-photo.jpg" alt="Hector Ulises Rodriguez Garcia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="profile-placeholder">HUR</div>
+            </div>
+
+            <div class="header-info">
+                <h1 class="name">Hector Ulises Rodriguez Garcia</h1>
+                <p class="subtitle">MSc. Management of Data and Artificial Intelligence</p>
+                <span class="availability">Available Immediately</span>
+            </div>
+        </div>
+
+        <!-- Right Card Deck Section (67%) -->
+        <div class="card-deck-section">
+            <div class="card-deck" id="cardDeck">
+                <!-- Card 1: Education -->
+                <div class="cv-card" data-index="0">
+                    <button class="close-btn" onclick="closeCard(this)">×</button>
+                    <h2 class="card-header">Academic Achievements & Degrees</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div class="item-icon">
+                                <!-- Replace with: <img src="assets/images/university-logo-1.png" alt="University Logo"> -->
+                                <span>🎓</span>
+                            </div>
+                            <div class="item-info">
+                                <h3>Master of Science in Data & AI Management</h3>
+                                <p class="company">University Name Here</p>
+                                <p class="period">09-2022 to 06-2024</p>
+                            </div>
+                        </div>
+                        <p class="item-description">
+                            Specialized in machine learning, data analytics, and artificial intelligence applications. 
+                            Completed thesis on advanced neural network architectures for predictive modeling.
+                        </p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div class="item-icon">
+                                <!-- Replace with: <img src="assets/images/university-logo-2.png" alt="University Logo"> -->
+                                <span>🎓</span>
+                            </div>
+                            <div class="item-info">
+                                <h3>Bachelor's Degree in Computer Science</h3>
+                                <p class="company">University Name Here</p>
+                                <p class="period">09-2018 to 06-2022</p>
+                            </div>
+                        </div>
+                        <p class="item-description">
+                            Focused on software engineering, algorithms, and data structures. 
+                            Graduated with honors, achieving top 5% in graduating class.
+                        </p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div class="item-icon">
+                                <!-- Replace with: <img src="assets/images/certificate-logo.png" alt="Certificate Logo"> -->
+                                <span>📜</span>
+                            </div>
+                            <div class="item-info">
+                                <h3>Professional Certification in AI</h3>
+                                <p class="company">Certification Body Name</p>
+                                <p class="period">01-2024 to 03-2024</p>
+                            </div>
+                        </div>
+                        <p class="item-description">
+                            Advanced certification covering deep learning, natural language processing, 
+                            and computer vision applications in industry settings.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Work Experience -->
+                <div class="cv-card" data-index="1">
+                    <button class="close-btn" onclick="closeCard(this)">×</button>
+                    <h2 class="card-header">Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div class="item-icon">
+                                <!-- Replace with: <img src="assets/images/company-logo-1.png" alt="Company Logo"> -->
+                                <span>💼</span>
+                            </div>
+                            <div class="item-info">
+                                <h3>Senior Data Scientist</h3>
+                                <p class="company">Tech Company Name</p>
+                                <p class="period">03-2024 to Present</p>
+                            </div>
+                        </div>
+                        <p class="item-description">
+                            Leading data science initiatives and developing machine learning models for business optimization. 
+                            Managing a team of 5 data analysts and implementing AI-driven solutions.
+                        </p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div class="item-icon">
+                                <!-- Replace with: <img src="assets/images/company-logo-2.png" alt="Company Logo"> -->
+                                <span>💼</span>
+                            </div>
+                            <div class="item-info">
+                                <h3>Data Analyst</h3>
+                                <p class="company">Analytics Firm Name</p>
+                                <p class="period">06-2022 to 02-2024</p>
+                            </div>
+                        </div>
+                        <p class="item-description">
+                            Performed data analysis and visualization for Fortune 500 clients. 
+                            Developed predictive models that improved business metrics by 25%.
+                        </p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div class="item-icon">
+                                <!-- Replace with: <img src="assets/images/company-logo-3.png" alt="Company Logo"> -->
+                                <span>💼</span>
+                            </div>
+                            <div class="item-info">
+                                <h3>Junior Developer</h3>
+                                <p class="company">Startup Company Name</p>
+                                <p class="period">01-2021 to 05-2022</p>
+                            </div>
+                        </div>
+                        <p class="item-description">
+                            Built web applications and implemented backend services. 
+                            Collaborated with cross-functional teams to deliver high-quality software products.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Languages -->
+                <div class="cv-card" data-index="2">
+                    <button class="close-btn" onclick="closeCard(this)">×</button>
+                    <h2 class="card-header">Language Proficiency</h2>
+                    
+                    <div class="language-item">
+                        <div class="language-header">
+                            <div class="language-icon">
+                                <!-- Replace with: <img src="assets/images/flag-english.png" alt="English Flag"> -->
+                                <span>🇬🇧</span>
+                            </div>
+                            <span class="language-name">English - C2 (Proficient)</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="95"></div>
+                        </div>
+                    </div>
+
+                    <div class="language-item">
+                        <div class="language-header">
+                            <div class="language-icon">
+                                <!-- Replace with: <img src="assets/images/flag-spanish.png" alt="Spanish Flag"> -->
+                                <span>🇪🇸</span>
+                            </div>
+                            <span class="language-name">Spanish - C2 (Native)</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="language-item">
+                        <div class="language-header">
+                            <div class="language-icon">
+                                <!-- Replace with: <img src="assets/images/flag-french.png" alt="French Flag"> -->
+                                <span>🇫🇷</span>
+                            </div>
+                            <span class="language-name">French - C1 (Advanced)</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="language-item">
+                        <div class="language-header">
+                            <div class="language-icon">
+                                <!-- Replace with: <img src="assets/images/flag-german.png" alt="German Flag"> -->
+                                <span>🇩🇪</span>
+                            </div>
+                            <span class="language-name">German - B2 (Intermediate)</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Skills -->
+                <div class="cv-card" data-index="3">
+                    <button class="close-btn" onclick="closeCard(this)">×</button>
+                    <h2 class="card-header">Skills & Expertise</h2>
+                    
+                    <div class="skills-grid">
+                        <div>
+                            <h3 class="skills-section-title hard-skills">Hard Skills</h3>
+                            
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <!-- Replace with: <img src="assets/images/icon-python.png" alt="Python"> -->
+                                        <span>🐍</span>
+                                    </div>
+                                    <span class="skill-name">Python</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="95"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <!-- Replace with: <img src="assets/images/icon-ml.png" alt="Machine Learning"> -->
+                                        <span>🤖</span>
+                                    </div>
+                                    <span class="skill-name">Machine Learning</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="90"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <!-- Replace with: <img src="assets/images/icon-sql.png" alt="SQL"> -->
+                                        <span>🗄️</span>
+                                    </div>
+                                    <span class="skill-name">SQL & Databases</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="85"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <!-- Replace with: <img src="assets/images/icon-cloud.png" alt="Cloud"> -->
+                                        <span>☁️</span>
+                                    </div>
+                                    <span class="skill-name">Cloud Computing</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="skills-section-title soft-skills">Soft Skills</h3>
+                            
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <!-- Replace with: <img src="assets/images/icon-leadership.png" alt="Leadership"> -->
+                                        <span>👥</span>
+                                    </div>
+                                    <span class="skill-name">Leadership</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="90"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <!-- Replace with: <img src="assets/images/icon-communication.png" alt="Communication"> -->
+                                        <span>💬</span>
+                                    </div>
+                                    <span class="skill-name">Communication</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="95"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <!-- Replace with: <img src="assets/images/icon-problem-solving.png" alt="Problem Solving"> -->
+                                        <span>🧩</span>
+                                    </div>
+                                    <span class="skill-name">Problem Solving</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="92"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <div class="skill-icon">
+                                        <!-- Replace with: <img src="assets/images/icon-teamwork.png" alt="Teamwork"> -->
+                                        <span>🤝</span>
+                                    </div>
+                                    <span class="skill-name">Teamwork</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-width="88"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Contact -->
+                <div class="cv-card" data-index="4">
+                    <button class="close-btn" onclick="closeCard(this)">×</button>
+                    <h2 class="card-header">Contact Information</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <!-- Replace with: <img src="assets/images/icon-email.png" alt="Email"> -->
+                            <span>📧</span>
+                        </div>
+                        <div class="contact-info">
+                            <a href="mailto:hector.rodriguez@email.com">hector.rodriguez@email.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <!-- Replace with: <img src="assets/images/icon-phone.png" alt="Phone"> -->
+                            <span>📱</span>
+                        </div>
+                        <div class="contact-info">
+                            <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <!-- Replace with: <img src="assets/images/icon-linkedin.png" alt="LinkedIn"> -->
+                            <span>💼</span>
+                        </div>
+                        <div class="contact-info">
+                            <a href="https://www.linkedin.com/in/hector-rodriguez" target="_blank">linkedin.com/in/hector-rodriguez</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <!-- Replace with: <img src="assets/images/icon-github.png" alt="GitHub"> -->
+                            <span>🐙</span>
+                        </div>
+                        <div class="contact-info">
+                            <a href="https://github.com/hectorrodriguez" target="_blank">github.com/hectorrodriguez</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <!-- Replace with: <img src="assets/images/icon-location.png" alt="Location"> -->
+                            <span>📍</span>
+                        </div>
+                        <div class="contact-info">
+                            Paris, France
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
+    
+    <div class="chatbot-modal" id="chatbotModal">
+        <div class="chatbot-header">
+            <span>Ask me anything!</span>
+            <button class="chatbot-close" onclick="toggleChatbot()">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot">
+                Hello! I'm here to answer questions about Hector's CV. What would you like to know?
+            </div>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Type your question..." onkeypress="handleChatKeypress(event)">
+            <button class="chatbot-send" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

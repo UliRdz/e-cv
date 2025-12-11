@@ -1,0 +1,793 @@
+/* Modern CV Website - Styles */
+
+/* ===========================
+   RESET & BASE STYLES
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ===========================
+   MAIN CONTAINER LAYOUT
+   =========================== */
+.container {
+    display: flex;
+    min-height: 100vh;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* ===========================
+   LEFT PROFILE SECTION (33%)
+   =========================== */
+.profile-section {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #F5F5F5;
+}
+
+.profile-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-placeholder {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #FF00FF, #FF6EC7);
+}
+
+.header-info {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #FF00FF, #FF6EC7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666666;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.availability {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ===========================
+   RIGHT CARD DECK SECTION (67%)
+   =========================== */
+.card-deck-section {
+    width: 67%;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-deck {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 500px;
+    perspective: 1500px;
+}
+
+.cv-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center center;
+    overflow-y: auto;
+    border: 1px solid #E0E0E0;
+}
+
+.cv-card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cv-card::-webkit-scrollbar-track {
+    background: #F5F5F5;
+    border-radius: 4px;
+}
+
+.cv-card::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FF00FF, #FF6EC7);
+    border-radius: 4px;
+}
+
+.cv-card:hover {
+    z-index: 100 !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.cv-card.fullscreen {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    max-width: none;
+    z-index: 1000 !important;
+    transform: scale(1) !important;
+    animation: expandCard 0.5s ease-out;
+}
+
+.card-header {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #FF00FF, #FF6EC7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #FF00FF, #FF6EC7);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    line-height: 1;
+}
+
+.cv-card.fullscreen .close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+    background: linear-gradient(135deg, #FF6EC7, #FF00FF);
+}
+
+/* ===========================
+   EDUCATION & EXPERIENCE ITEMS
+   =========================== */
+.experience-item,
+.education-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #F5F5F5;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.experience-item:hover,
+.education-item:hover {
+    background: #E0E0E0;
+    transform: translateX(5px);
+}
+
+.item-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.item-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00FFFF, #00BFFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0;
+    font-size: 24px;
+}
+
+.item-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-icon span {
+    display: block;
+}
+
+.item-info h3 {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.item-info .company {
+    color: #666666;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.item-info .period {
+    color: #888888;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.item-description {
+    color: #666666;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* ===========================
+   LANGUAGE SKILLS
+   =========================== */
+.language-item {
+    margin-bottom: 25px;
+}
+
+.language-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.language-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF00FF, #FF6EC7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.language-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.language-icon span {
+    display: block;
+}
+
+.language-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* ===========================
+   PROGRESS BARS
+   =========================== */
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #E0E0E0;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00FFFF, #00BFFF);
+    border-radius: 6px;
+    transition: width 1s ease-out;
+    position: relative;
+    overflow: hidden;
+    width: 0%;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* ===========================
+   SKILLS SECTION
+   =========================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.skills-section-title {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.skills-section-title.hard-skills {
+    color: #FF00FF;
+}
+
+.skills-section-title.soft-skills {
+    color: #00FFFF;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.skill-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #00FF7F, #32CD32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.skill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.skill-icon span {
+    display: block;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: #000000;
+    font-size: 1rem;
+}
+
+/* ===========================
+   CONTACT SECTION
+   =========================== */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #F5F5F5;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: linear-gradient(135deg, #FF00FF, #00FFFF);
+    color: white;
+    transform: translateX(10px);
+}
+
+.contact-item:hover .contact-info a {
+    color: white;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF00FF, #FF6EC7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.contact-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.contact-icon span {
+    display: block;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   CHATBOT
+   =========================== */
+.chatbot-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #FF00FF, #00FFFF);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatbot-button:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-modal {
+    display: none;
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    width: 400px;
+    height: 500px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 998;
+    flex-direction: column;
+    animation: slideUp 0.3s ease-out;
+}
+
+.chatbot-modal.active {
+    display: flex;
+}
+
+.chatbot-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #FF00FF, #00FFFF);
+    color: white;
+    border-radius: 20px 20px 0 0;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.chatbot-close:hover {
+    transform: rotate(90deg);
+}
+
+.chatbot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chatbot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+    background: #F5F5F5;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FF00FF, #00FFFF);
+    border-radius: 3px;
+}
+
+.chatbot-input-area {
+    padding: 20px;
+    border-top: 1px solid #E0E0E0;
+    display: flex;
+    gap: 10px;
+}
+
+.chatbot-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #E0E0E0;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.chatbot-input:focus {
+    border-color: #FF00FF;
+}
+
+.chatbot-send {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #FF00FF, #00FFFF);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.chatbot-send:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: 18px;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease-out;
+    line-height: 1.5;
+}
+
+.message.user {
+    background: linear-gradient(135deg, #FF00FF, #FF6EC7);
+    color: white;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background: #F5F5F5;
+    color: #000000;
+    align-self: flex-start;
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes expandCard {
+    from {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .profile-section {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+
+    .card-deck-section {
+        width: 100%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .chatbot-modal {
+        width: calc(100vw - 40px);
+        right: 20px;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .cv-card {
+        padding: 30px;
+    }
+
+    .card-header {
+        font-size: 1.5rem;
+    }
+
+    .skills-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .profile-section {
+        gap: 20px;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .cv-card {
+        padding: 20px;
+    }
+
+    .chatbot-button {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .chatbot-modal {
+        height: 400px;
+    }
+}
