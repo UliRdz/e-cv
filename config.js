@@ -182,46 +182,163 @@ async function callGroqAPI(userMessage) {
  * @param {string} question - User's question
  * @returns {string} Response
  */
+
 function getSimpleResponse(question) {
-    const lowerQuestion = question.toLowerCase();
+  const lowerQuestion = question.toLowerCase();
+
+      // Experience related
+      if (
+        lowerQuestion.includes('experience') ||
+        lowerQuestion.includes('work') ||
+        lowerQuestion.includes('job')
+      ) {
+        return (
+          "Ulises Rodriguez is a Project Manager / AI Product Owner with 6 years of experience.\n\n" +
+          "• AI Product Owner — EGIS Group (France), CDD, May 2025–Oct 2026:\n" +
+          "  - AI product vision & strategic roadmap for road, rail, airport sectors\n" +
+          "  - User/stakeholder needs, backlog (user stories, functional specs)\n" +
+          "  - Coordinated data scientists & developers; ML POCs (XGBoost, LSTM, BiLSTM)\n" +
+          "  - KPI dashboards (ROI, adoption, NPS) & release planning\n\n" +
+          "• Strategic Planning & Project Implementation — CUADRA (Mexico), CDI, Aug 2022–Sept 2024:\n" +
+          "  - Quarterly syntheses for CEO; Balanced Scorecard optimization (+10% accuracy)\n" +
+          "  - IT/IoT rollout: +20% operational efficiency across 69 stores; −30% manual processes\n" +
+          "  - AGILE & Management 3.0 for improved delivery and collaboration\n\n" +
+          "• Process Engineering Specialist (NPI) — DENSO North America, CDI, Sept 2019–Aug 2022:\n" +
+          "  - NPI for HONDA, FORD, STELLANTIS, TOYOTA (95% mass‑production efficiency)\n" +
+          "  - RPA automation; >15% budget savings during COVID‑19\n" +
+          "  - Core Tools (MSA, PPAP, FMEA) reducing defects to 3%"
+        );
+      }
     
-    // Experience related
-    if (lowerQuestion.includes('experience') || lowerQuestion.includes('work') || lowerQuestion.includes('job')) {
-        return 'Ulises has extensive experience in data science and AI:\n\n• Senior Data Scientist at a leading tech company (March 2024 - Present)\n• Data Analyst at an analytics firm (June 2022 - Feb 2024)\n• Junior Developer at a startup (Jan 2021 - May 2022)\n\nHe has led teams, developed ML models, and improved business metrics by 25%.';
-    }
+      // Education related
+      if (
+        lowerQuestion.includes('education') ||
+        lowerQuestion.includes('degree') ||
+        lowerQuestion.includes('study') ||
+        lowerQuestion.includes('university')
+      ) {
+        return (
+          "Education & Certifications:\n\n" +
+          "• MSc — Management with Data & Artificial Intelligence (Grenoble Ecole de Management), 2024–2025\n" +
+          "• Bachelor’s — Business Management (Universidad de Guanajuato), 2014–2019\n" +
+          "• Certifications: SCRUM Product Owner (SPOC, 2024); Front‑End Development (Oracle Next Education, 2023);\n" +
+          "  Core Tools (2021); Microsoft AI‑900 (2024–2025)\n\n" +
+          "Focus: AI product/roadmaps, ML (supervised/unsupervised/deep learning), NLP, neural networks, computer vision, LLMs"
+        );
+      }
     
-    // Education related
-    if (lowerQuestion.includes('education') || lowerQuestion.includes('degree') || lowerQuestion.includes('study') || lowerQuestion.includes('university')) {
-        return 'Ulises holds advanced degrees in data science and AI:\n\n• MSc in Management of Data and Artificial Intelligence (2024-2025)\n• Bachelor\'s Degree in Business Management (2014-2019) - Top 5% of class\n• Professional Certification in AI (2024)\n\nHis education focused on machine learning, neural networks, and AI applications.';
-    }
+      // Skills related
+      if (
+        lowerQuestion.includes('skill') ||
+        lowerQuestion.includes('skills') ||
+        lowerQuestion.includes('technology') ||
+        lowerQuestion.includes('technical')
+      ) {
+        return (
+          "Skills:\n\n" +
+          "**Data & Analytics:** Power BI, Excel, Python libraries\n" +
+          "**Product & Backlog Tools:** Jira, Miro, Trello, Figma, MS Project, Klaxoon\n" +
+          "**Programming:** Python, SQL, CSS & HTML\n" +
+          "**Machine Learning:** Supervised (regression, classification), Unsupervised (clustering), Deep Learning\n" +
+          "**Domains:** NLP, Neural Networks, Computer Vision, Large Language Models (LLMs)\n" +
+          "**Soft Skills:** Leadership, Communication, Backlog management, Prioritization, Cross‑team collaboration, Continuous improvement"
+        );
+      }
     
-    // Skills related
-    if (lowerQuestion.includes('skill') || lowerQuestion.includes('technology') || lowerQuestion.includes('technical')) {
-        return 'Ulises's technical expertise includes:\n\n**Hard Skills:**\n• Python  - Intermidiate level\n• Machine Learning \n• SQL & Databases \n• Cloud Computing (OCI & Azure)\n\n**Soft Skills:**\n• Communication\n• Leadership \n• Problem Solving\n• Teamwork';
-    }
+      // Languages related
+      if (
+        lowerQuestion.includes('language') ||
+        lowerQuestion.includes('languages') ||
+        lowerQuestion.includes('speak') ||
+        lowerQuestion.includes('multilingual')
+      ) {
+        return (
+          "Languages:\n\n" +
+          "• Spanish — Native\n" +
+          "• English — Bilingual\n" +
+          "• French — C1 (Advanced)"
+        );
+      }
     
-    // Languages related
-    if (lowerQuestion.includes('language') || lowerQuestion.includes('speak') || lowerQuestion.includes('multilingual')) {
-        return 'Hector is multilingual with proficiency in:\n\n• English - C2 (Proficient)\n• Spanish - C2 (Native)\n• French - C1 (Advanced)\n• German - B2 (Intermediate)\n\nThis allows him to work effectively in international environments.';
-    }
+      // Contact related
+      if (
+        lowerQuestion.includes('contact') ||
+        lowerQuestion.includes('reach') ||
+        lowerQuestion.includes('email') ||
+        lowerQuestion.includes('phone') ||
+        lowerQuestion.includes('linkedin')
+      ) {
+        return (
+          "Contact:\n\n" +
+          "📧 Email: hulises.rg@gmail.com\n" +
+          "📱 Phone: +33 0759544936\n" +
+          "💼 LinkedIn: https://www.linkedin.com/in/lgeulisesrg\n" +
+          "🌐 Portfolio (e‑CV): https://ulirdz.github.io/e‑cv/\n" +
+          "📍 Location: France (city not specified)"
+        );
+      }
     
-    // Contact related
-    if (lowerQuestion.includes('contact') || lowerQuestion.includes('reach') || lowerQuestion.includes('email') || lowerQuestion.includes('phone')) {
-        return 'You can contact Ulises through:\n\n📧 Email: hulises.rg@gmail.com\n📱 Phone: +33 0 75 95 44 936\n💼 LinkedIn: www.linkedin.com/in/lgeulisesrg/\n🐙 GitHub: github.com/UliRdz\n📍 Location: Paris, France';
-    }
+      // Availability related
+      if (
+        lowerQuestion.includes('available') ||
+        lowerQuestion.includes('availability') ||
+        lowerQuestion.includes('start') ||
+        lowerQuestion.includes('start date') ||
+        lowerQuestion.includes('hire')
+      ) {
+        return (
+          "Availability:\n\n" +
+          "• Available from January 1, 2026\n" +
+          "• Seeking a permanent role (CDI)\n" +
+          "• Open to discussing on‑site, hybrid, or remote modes; relocation not specified"
+        );
+      }
     
-    // Availability related
-    if (lowerQuestion.includes('available') || lowerQuestion.includes('start') || lowerQuestion.includes('hire')) {
-        return 'Ulises is available immediately! He\'s ready to start on new projects and opportunities right away. Based in Paris, France, he\'s open to both on-site and remote positions.';
-    }
+      // Projects or portfolio
+      if (
+        lowerQuestion.includes('project') ||
+        lowerQuestion.includes('projects') ||
+        lowerQuestion.includes('portfolio') ||
+        lowerQuestion.includes('work sample') ||
+        lowerQuestion.includes('case') ||
+        lowerQuestion.includes('cases')
+      ) {
+        return (
+          "Selected work & projects:\n\n" +
+          "• EGIS: AI product vision and ML POCs (XGBoost, LSTM, BiLSTM); KPI dashboards (ROI, adoption, NPS); release planning\n" +
+          "• CUADRA: IT/IoT deployment across 69 stores; +20% operational efficiency; −30% manual processes; Balanced Scorecard optimization (+10%)\n" +
+          "• DENSO: NPI for major OEMs; 95% mass‑production efficiency; Core Tools (MSA, PPAP, FMEA); RPA automation\n\n" +
+          "Portfolio: https://ulirdz.github.io/e‑cv/"
+        );
+      }
     
-    // Projects or portfolio
-    if (lowerQuestion.includes('project') || lowerQuestion.includes('portfolio') || lowerQuestion.includes('work sample')) {
-        return 'Ulises has worked on various data science and AI projects including:\n\n• Developing ML models for business optimization\n• Implementing  Computer Vision Solutions for Defect detection during his time in DENSO \n• Building predictive models that improved metrics by 25%\n• Creating web & mobile applications and backend services\n\nFor detailed project information, please contact him directly.';
-    }
+      // Salary (HR common)
+      if (lowerQuestion.includes('salary') || lowerQuestion.includes('compensation')) {
+        return "Salary/compensation: Not specified in CV; open to discuss based on role scope, responsibilities, and market.";
+      }
     
-    // Default response
-    return 'I\'d be happy to help you learn more about Ulises! You can ask me about:\n\n• His work experience and achievements\n• Education and certifications\n• Technical and soft skills\n• Language proficiency\n• Contact information\n• Availability and location\n\nWhat would you like to know?';
+      // Relocation / remote / travel (HR common)
+      if (lowerQuestion.includes('relocation') || lowerQuestion.includes('remote') || lowerQuestion.includes('travel')) {
+        return (
+          "Work preferences:\n\n" +
+          "• Remote/Hybrid: Experienced with international coordination; preference not specified\n" +
+          "• On‑site: Significant on‑site/project experience\n" +
+          "• Travel: Comfortable with travel; past coordination with teams in Italy, Czech Republic, Japan, US, Canada"
+        );
+      }
+    
+      // Default response
+      return (
+        "I'd be happy to help you learn more about Ulises!\n\n" +
+        "You can ask about:\n" +
+        "• Work experience and achievements\n" +
+        "• Education and certifications\n" +
+        "• Technical and soft skills\n" +
+        "• Language proficiency\n" +
+        "• Contact information\n" +
+        "• Availability and location\n\n" +
+        "What would you like to know?"
+      );
 }
 
 // Export for use in main script
