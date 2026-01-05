@@ -151,9 +151,6 @@ async function sendMessage() {
 // GROQ API INTEGRATION
 // ===========================
 async function getGroqResponse(question) {
-    // IMPORTANT: Replace with your actual Groq API implementation
-    // This is a placeholder function that needs to be connected to Groq API
-    
     /*
     ========================================
     GROQ API INTEGRATION GUIDE
@@ -216,23 +213,82 @@ async function getGroqResponse(question) {
     const lowerQuestion = question.toLowerCase();
     
     const responses = {
-        'experience': 'Hector has extensive experience in data science and AI, including roles as Senior Data Scientist and Data Analyst at leading tech companies.',
-        'work': 'Hector has extensive experience in data science and AI, including roles as Senior Data Scientist and Data Analyst at leading tech companies.',
-        'job': 'Hector has extensive experience in data science and AI, including roles as Senior Data Scientist and Data Analyst at leading tech companies.',
-        'education': 'Hector holds an MSc in Management of Data and Artificial Intelligence and a Bachelor\'s degree in Computer Science. He also has professional certifications in AI.',
-        'degree': 'Hector holds an MSc in Management of Data and Artificial Intelligence and a Bachelor\'s degree in Computer Science. He also has professional certifications in AI.',
-        'study': 'Hector holds an MSc in Management of Data and Artificial Intelligence and a Bachelor\'s degree in Computer Science. He also has professional certifications in AI.',
-        'skill': 'Hector is highly proficient in Python (95%), Machine Learning (90%), SQL & Databases (85%), and Cloud Computing (80%). He also excels in soft skills like Leadership (90%), Communication (95%), Problem Solving (92%), and Teamwork (88%).',
-        'python': 'Hector has expert-level proficiency in Python (95%), using it extensively for data science and machine learning projects.',
-        'language': 'Hector is multilingual: English (C2 - Proficient), Spanish (C2 - Native), French (C1 - Advanced), and German (B2 - Intermediate).',
-        'speak': 'Hector is multilingual: English (C2 - Proficient), Spanish (C2 - Native), French (C1 - Advanced), and German (B2 - Intermediate).',
-        'contact': 'You can reach Hector at hector.rodriguez@email.com or call +33 1 23 45 67 89. He\'s also available on LinkedIn at linkedin.com/in/hector-rodriguez',
-        'email': 'You can contact Hector via email at hector.rodriguez@email.com',
-        'phone': 'You can call Hector at +33 1 23 45 67 89',
-        'linkedin': 'You can connect with Hector on LinkedIn at linkedin.com/in/hector-rodriguez',
-        'location': 'Hector is based in Paris, France and is available immediately for new opportunities.',
-        'available': 'Hector is available immediately for new opportunities and is currently based in Paris, France.',
-        'hire': 'Hector is available immediately and ready to start. He brings expertise in data science, AI, and machine learning with proven leadership skills.'
+    
+      // CORE
+      "experience": "Ulises Rodriguez est Chef de projet / AI Product Owner avec 6 ans d'expérience. Dernier poste : AI Product Owner (EGIS Group, France, mai 2025–oct. 2026) : vision produit IA, roadmap, backlog, coordination data scientists et développeurs, POC (XGBoost, LSTM, BiLSTM), suivi KPI (ROI, adoption, NPS). Avant : CUADRA (Mexique, 2022–2024) et DENSO North America (2019–2022) avec résultats (+10% Balanced Scorecard, +20% efficacité, −30% processus manuels, 95% efficacité production, >15% économies, défauts 3%).",
+      "work": "Voir expérience : EGIS (AI Product Owner), CUADRA (planification stratégique, IT/IoT), DENSO (NPI, Core Tools, coordination internationale).",
+      "job": "Postes : AI Product Owner (EGIS, 2025–2026), Planification stratégique (CUADRA, 2022–2024), Spécialiste NPI (DENSO, 2019–2022).",
+    
+      "education": "MSc Management with Data & Artificial Intelligence (Grenoble EM, 2024–2025) ; Licence en Gestion d’Entreprise (Universidad de Guanajuato, 2014–2019). Certifications : SCRUM Product Owner (2024), Front‑End (2023), Core Tools (2021), Microsoft AI‑900 (2024–2025).",
+      "degree": "MSc Management with Data & AI ; Licence en Gestion ; SPOC, Front‑End, Core Tools, AI‑900.",
+      "study": "Études : MSc (GEM) et Licence (UG).",
+    
+      "skill": "Analyse & visualisation (Power BI, Excel, Python) ; Outils backlog (Jira, Miro, Trello, Figma, MS Project, Klaxoon) ; Programmation (Python, SQL, CSS & HTML) ; Machine Learning (supervisé, non supervisé, deep learning) ; Domaines : NLP, réseaux de neurones, computer vision, LLMs.",
+      "python": "Python pour analyse, visualisation et machine learning ; POC avec XGBoost, LSTM, BiLSTM.",
+    
+      "language": "Espagnol (natif), Anglais (bilingue), Français (C1).",
+      "speak": "Ulises parle Espagnol, Anglais et Français.",
+    
+      "contact": "Contact : hulises.rg@gmail.com | +33 0759544936 | LinkedIn: linkedin.com/in/lgeulisesrg | e‑CV: ulirdz.github.io/e‑cv/",
+      "email": "E‑mail : hulises.rg@gmail.com",
+      "phone": "Téléphone : +33 0759544936",
+      "linkedin": "LinkedIn : linkedin.com/in/lgeulisesrg",
+    
+      "location": "Basé en France (mission récente chez EGIS Group).",
+      "available": "Disponible à partir du 1er janvier 2026 pour un CDI.",
+      "hire": "Prêt à démarrer au 01/01/2026. Atouts : stratégie produit IA, delivery agile, POCs ML, pilotage par KPI, leadership transversal.",
+    
+      // HR-STYLE KEYWORDS
+      "summary": "Chef de projet / AI Product Owner, 6 ans d’expérience. Pont entre parties prenantes et ingénieurs ; focus IA, KPI et adoption.",
+      "headline": "AI Product Owner orienté impact, expériences EGIS, CUADRA, DENSO ; MSc Management with Data & AI.",
+      "motivation": "Motivé par l’innovation et la création de valeur via l’IA (vision produit, adoption, ROI).",
+      "role-fit": "Fit naturel pour rôles Product Owner IA / Chef de projet data/IA / PM technique.",
+      "why-hire": "Capable d’aligner stratégie et exécution, livrer des POC ML, piloter par KPI et coordonner des équipes pluridisciplinaires.",
+      "strengths": "Leadership transversal, cadrage produit IA, backlog & specs, delivery agile, mesure d’impact.",
+      "weaknesses": "Non spécifié ; à discuter en entretien.",
+      "achievements": "EGIS : POC ML et KPI adoption/ROI ; CUADRA : +10% Balanced Scorecard, +20% efficacité, −30% manuel ; DENSO : 95% efficacité production, >15% économies, défauts 3%.",
+      "kpi": "Mesure via KPI : ROI, taux d’adoption, NPS.",
+      "impact": "Impacts mesurés sur performance, qualité et finances.",
+      "methodology": "AGILE, Management 3.0 ; backlog, user stories, specs, comités de pilotage.",
+      "tools": "Jira, Miro, Trello, Figma, MS Project, Klaxoon ; Power BI, Excel ; Python, SQL.",
+      "ml-stack": "Supervisé, non supervisé, deep learning ; NLP, réseaux de neurones, computer vision, LLMs.",
+      "projects": "EGIS : roadmap IA, POC ML ; CUADRA : IT/IoT ; DENSO : NPI pour HONDA, FORD, STELLANTIS, TOYOTA.",
+      "sectors": "Routier, ferroviaire, aéroportuaire ; retail ; automobile.",
+      "industry": "Mobilité/transports, retail, automobile.",
+      "leadership": "Animation de comités, coordination data scientists/développeurs, communication métiers-tech-direction.",
+      "team-size": "Taille non précisée ; coordination pluridisciplinaire et internationale.",
+      "stakeholders": "Parties prenantes métiers, direction, équipes techniques.",
+      "start-date": "01/01/2026.",
+      "notice-period": "Disponible immédiatement à partir du 01/01/2026.",
+      "contract": "Recherche un CDI.",
+      "cdi": "Oui, recherche un CDI.",
+      "cdd": "Dernier contrat : CDD chez EGIS (mai 2025–oct. 2026).",
+      "freelance": "Non spécifié.",
+      "relocation": "Non spécifié (basé en France).",
+      "remote": "Habitué aux environnements hybrides et coordination internationale.",
+      "on-site": "Expérience significative sur site.",
+      "travel": "A travaillé avec équipes internationales ; déplacements possibles.",
+      "salary": "Non spécifié ; à discuter.",
+      "visa": "Non spécifié.",
+      "work-authorization": "Non spécifié.",
+      "certifications": "SPOC (2024), Front‑End (2023), Core Tools (2021), Microsoft AI‑900 (2024–2025).",
+      "portfolio": "e‑CV : ulirdz.github.io/e‑cv/",
+      "website": "ulirdz.github.io/e‑cv/",
+      "references": "Disponibles sur demande.",
+      "graduation-year": "Licence : 2019 ; MSc : 2025.",
+      "gaps": "Aucune période d’inactivité longue mentionnée.",
+      "soft-skills": "Leadership, communication, gestion de backlog, priorisation, collaboration multi‑équipes.",
+      "francais": "Français (C1).",
+      "anglais": "Anglais (bilingue).",
+      "espagnol": "Espagnol (natif).",
+      "availability": "Disponible au 01/01/2026.",
+      "location-preference": "France ; mobilité non précisée.",
+      "future-goals": "Continuer à porter des produits IA à fort impact.",
+      "culture-fit": "Orienté collaboration et amélioration continue (AGILE, Management 3.0).",
+      "egis": "EGIS Group (France) : AI Product Owner, vision produit IA, KPI, POC ML.",
+      "cuadra": "CUADRA (Mexique) : planification stratégique, Balanced Scorecard, IT/IoT.",
+      "denso": "DENSO North America : NPI pour HONDA, FORD, STELLANTIS, TOYOTA."
+
     };
     
     // Search for matching keywords
